@@ -15,5 +15,6 @@ El proyecto se desarrolló utilizando las siguientes tecnologías:
 - HTML
 - CSS
 - JavaScript
+- Bootstrap
 - Express
 - MySQL
