@@ -17,10 +17,10 @@ export const query = async (sql, values = []) => {
 
 const ACCEPTED_ORIGINS = [];
 
-if (process.env.NODE_ENV === 'development') {
-  ACCEPTED_ORIGINS.push('*');
-} else if (process.env.NODE_ENV === 'production') {
-  ACCEPTED_ORIGINS.push('https://landing-jc-actividad-6.netlify.app');
+if (process.env.NODE_ENV?.trim() === 'development') {
+  ACCEPTED_ORIGINS.push('http://localhost:5173');
+} else if (process.env.NODE_ENV?.trim() === 'production') {
+  ACCEPTED_ORIGINS.push('https://landing-taller-6-jc.vercel.app');
 }
 
 export const corsMiddleware = ({ acceptedOrigins = ACCEPTED_ORIGINS } = {}) =>

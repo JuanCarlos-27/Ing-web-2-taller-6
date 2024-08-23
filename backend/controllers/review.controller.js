@@ -9,7 +9,6 @@ export class ReviewController {
         comment,
         name,
         hostId
-
       ]);
       return res.json({ success: true });
     } catch (e) {

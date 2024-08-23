@@ -2,13 +2,14 @@ import { deleteReview, getHostInfoById, getReviews, saveReview, updateReview } f
 import { naturalDate } from './utils.js';
 
 const form = document.getElementById('rating-form');
-let hostId = localStorage.getItem('hostId');
+let hostId = null;
 
 document.addEventListener('DOMContentLoaded', async () => {
   hostId = localStorage.getItem('hostId');
   if (!hostId) {
     const uuid = crypto.randomUUID();
     localStorage.setItem('hostId', uuid);
+    hostId = uuid;
   }
 
   const response = await getHostInfoById(hostId);
